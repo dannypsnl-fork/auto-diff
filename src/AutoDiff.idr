@@ -33,6 +33,13 @@ export
 diff : Num a => (Diff a -> Diff a) -> a -> a
 diff f = getGradient . diff' f
 
+export
+sin' : Diff Double -> Diff Double
+sin' = elementary sin cos
+export
+cos' : Diff Double -> Diff Double
+cos' = elementary cos (negate . sin)
+
 Eq a => Eq (Diff a) where
   u == v = getValue u == getValue v
 
