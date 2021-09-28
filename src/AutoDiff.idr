@@ -45,3 +45,9 @@ Num a => Num (Diff a) where
   -- d(uv) = v(du) + u(dv)
   (*) = arithmetic (*) (\u, v => (v, u))
   fromInteger = constant . fromInteger
+
+Neg a => Neg (Diff a) where
+  -- d(u-v) = du - dv
+  (-) = arithmetic (-) (\_, _ => (1, -1))
+  -- d(-x) = -1
+  negate = elementary negate (const (-1))
