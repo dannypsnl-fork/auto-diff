@@ -8,7 +8,5 @@ maintainers = "Lîm Tsú-thuàn"
 homepage = "https://github.com/dannypsnl/auto-diff"
 
 sourcedir = "src"
-builddir = "build"
-outputdir = "bin"
 
 modules = AutoDiff
